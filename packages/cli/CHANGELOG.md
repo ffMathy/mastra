@@ -1,5 +1,31 @@
 # mastra
 
+## 1.0.0-beta.2
+
+### Minor Changes
+
+- Add host:port support to --inspect and --inspect-brk flags ([#10077](https://github.com/mastra-ai/mastra/pull/10077))
+
+  Enable optional host:port values for Docker debugging (e.g., `--inspect=0.0.0.0:9229`) while maintaining backward compatibility with boolean flags.
+
+### Patch Changes
+
+- Add restart method to workflow run that allows restarting an active workflow run ([#9750](https://github.com/mastra-ai/mastra/pull/9750))
+  Add status filter to `listWorkflowRuns`
+  Add automatic restart to restart active workflow runs when server starts
+
+- Templates now don't dynamically create a branch for every provider, each template should be agnostic and just use a env var to set the models until the user wants to set it otherwise. ([#10036](https://github.com/mastra-ai/mastra/pull/10036))
+  MCP docs server will install the beta version of the docs server if they create a project with the beta tag.
+  Updates to the templates now will get pushed to the beta branch, when beta goes stable we will merge the beta branch into the main branch for all templates and update the github script to push to main.
+  Templates have been cleaned up
+  small docs updates based off of how the template migrations went
+
+- Update internal dependencies, no change in behavior ([#10000](https://github.com/mastra-ai/mastra/pull/10000))
+
+- Updated dependencies [[`df9fdcd`](https://github.com/mastra-ai/mastra/commit/df9fdcd8403652c894cf4ac0503afea3b822588c), [`65591d2`](https://github.com/mastra-ai/mastra/commit/65591d2b7cecb83fff4ebc1d743e2f71859a2f7d), [`08c31c1`](https://github.com/mastra-ai/mastra/commit/08c31c188ebccd598acaf55e888b6397d01f7eae), [`23c10a1`](https://github.com/mastra-ai/mastra/commit/23c10a1efdd9a693c405511ab2dc8a1236603162), [`c10398d`](https://github.com/mastra-ai/mastra/commit/c10398d5b88f1d4af556f4267ff06f1d11e89179), [`00c2387`](https://github.com/mastra-ai/mastra/commit/00c2387f5f04a365316f851e58666ac43f8c4edf), [`4d59f58`](https://github.com/mastra-ai/mastra/commit/4d59f58de2d90d6e2810a19d4518e38ddddb9038), [`e1bb9c9`](https://github.com/mastra-ai/mastra/commit/e1bb9c94b4eb68b019ae275981be3feb769b5365)]:
+  - @mastra/deployer@1.0.0-beta.3
+  - @mastra/core@1.0.0-beta.3
+
 ## 1.0.0-beta.1
 
 ### Patch Changes
